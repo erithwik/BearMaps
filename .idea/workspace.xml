@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a161d162-442c-4912-8994-35fe6da290f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/AStarGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/ShortestPathsSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/SolverOutcome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/WeightedEdge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/WeirdSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/streetmap/GraphBuildingHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/streetmap/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bearmaps/graph/streetmap/StreetMapGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/project1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/project2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/project3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/Make.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/Makefile.build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/Makefile.kernel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/Makefile.userprog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/block.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/block.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/ide.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/ide.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/input.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/input.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/intq.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/intq.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/kbd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/kbd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/partition.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/partition.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/pit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/pit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/rtc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/rtc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/shutdown.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/shutdown.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/speaker.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/speaker.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/timer.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/timer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/vga.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/devices/vga.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/bubsort.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/cat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/cmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/cp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/echo.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/halt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/hex-dump.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/insult.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/lib/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/lib/user/.dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/lib/user/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/lineup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/ls.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/matmult.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/mcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/mcp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/mkdir.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/pwd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/recursor.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/rm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/examples/shell.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/Make.vars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/directory.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/directory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/file.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/file.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/filesys.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/filesys.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/free-map.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/free-map.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/fsutil.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/fsutil.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/inode.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/inode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/filesys/off_t.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/arithmetic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/ctype.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/debug.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/debug.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/inttypes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/bitmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/bitmap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/console.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/console.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/debug.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/hash.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/list.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/list.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/stdio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/kernel/stdlib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/limits.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/packed.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/random.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/round.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdarg.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdbool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stddef.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdint.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdio.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdlib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/stdlib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/string.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/string.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/syscall-nr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/console.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/debug.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/entry.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/stdio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/stdlib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/stdlib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/syscall.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/syscall.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/user/user.lds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/ustar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/lib/ustar.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/memory/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/memory/Make.vars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/memory/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-big-endian.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-gdbstub-ENN.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-jitter.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-ms-extensions.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-namespace.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-page-fault-segv.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-paranoia.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-solaris-link.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-solaris-tty.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.2.6-triple-fault.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-banner-stderr.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-block-device-check.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-jitter-plus-segv.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-link-tinfo.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/bochs-2.6.2-xrandr-pkgconfig.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/gcc-3.3.6-cross-howto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/misc/gdb-macros" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/Algorithm/Diff.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/arc4.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/arc4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/arc4.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/cksum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/cksum.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/cksum.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/Grading.no-vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/Grading.with-vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/Rubric" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/child-syn-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/child-syn-wrt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/full.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-create.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-create.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-full.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-full.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-random.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-seq-block.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-seq-block.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-seq-random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/lg-seq-random.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/random.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/seq-block.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/seq-random.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-create.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-create.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-full.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-full.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-random.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-seq-block.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-seq-block.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-seq-random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/sm-seq-random.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-read.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-read.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-remove.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-remove.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-write.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-write.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/base/syn-write.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/create.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/Rubric.functionality" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/Rubric.persistence" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/Rubric.robustness" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/child-syn-rw.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-empty-name-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-empty-name.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-empty-name.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mk-tree-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mk-tree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mk-tree.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mkdir-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mkdir.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-mkdir.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-open-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-open.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-open.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-over-file-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-over-file.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-over-file.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-cwd-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-cwd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-cwd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-parent-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-parent.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-parent.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-root-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-root.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-root.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-tree-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-tree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rm-tree.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rmdir-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rmdir.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-rmdir.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-under-file-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-under-file.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-under-file.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-vine-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-vine.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/dir-vine.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-create-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-create.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-create.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-dir-lg-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-dir-lg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-dir-lg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-dir.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-file-size-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-file-size.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-file-size.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-lg-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-lg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-lg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-sm-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-sm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-root-sm.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-lg-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-lg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-lg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-sm-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-sm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq-sm.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-seq.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-sparse-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-sparse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-sparse.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-tell-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-tell.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-tell.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-two-files-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-two-files.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/grow-two-files.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/mk-tree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/mk-tree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/syn-rw-persistence.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/syn-rw.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/syn-rw.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/syn-rw.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/extended/tar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/seq-test.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/filesys/seq-test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/internal/list.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/internal/stdio.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/internal/stdlib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/lib.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/lib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/lib.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/main.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/make-grade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-fail.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-fail.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-fit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-fit.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-free.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-free.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-merge-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-merge-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-merge-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-merge-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-null.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-null.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-simple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/malloc-simple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-bad-addr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-bad-addr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-bad-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-bad-read.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-big-stk-obj.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-big-stk-obj.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-bad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-bad.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-pusha.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-pusha.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-stack.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-stack.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-stk-sc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-grow-stk-sc.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-stk-oflow.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-stk-oflow.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-write-code-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-write-code.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-write-code.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/pt-write-code2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-3.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-null.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/realloc-null.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-counter.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-counter.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-dealloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-dealloc.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-fail-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-fail-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-fail-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-fail-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-large.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-large.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-many.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-many.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-mebi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-mebi.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-multi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-multi.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-none.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-none.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-oom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-page.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-page.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-rv.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-rv.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-simple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-simple.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-small.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-small.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-zero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/memory/sbrk-zero.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/random.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/tests.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/Grading" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/Rubric.alarm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/Rubric.mlfqs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/Rubric.priority" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-multiple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-negative.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-negative.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-priority.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-priority.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-simultaneous.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-simultaneous.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-single.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-wait.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-zero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm-zero.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/alarm.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-block.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-block.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-fair-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-fair-20.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-fair.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-60.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-60.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-avg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-load-avg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-nice-10.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-nice-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-recent-1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs-recent-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/mlfqs.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-change.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-change.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-condvar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-condvar.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-chain.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-chain.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-lower.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-lower.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-multiple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-multiple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-multiple2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-multiple2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-nest.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-nest.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-one.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-one.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-sema.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-donate-sema.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-fifo.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-fifo.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-preempt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-preempt.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-sema.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/priority-sema.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/threads/tests.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/Grading" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/Rubric.functionality" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/Rubric.robustness" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args-dbl-space.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args-many.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args-multiple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args-none.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args-single.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/args.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-jump.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-jump.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-jump2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-jump2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-read.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-read2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-read2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-write.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-write.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-write2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/bad-write2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/boundary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/boundary.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/child-bad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/child-close.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/child-rox.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/child-simple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-bad-fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-bad-fd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-normal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-normal.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-stdin.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-stdin.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-stdout.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-stdout.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-twice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/close-twice.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-bad-ptr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-bad-ptr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-bound.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-bound.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-empty.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-empty.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-exists.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-exists.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-long.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-long.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-normal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-normal.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-null.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/create-null.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/do-nothing.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/do-nothing.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/do-stack-align.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/do-stack-align.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-arg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-arg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bad-ptr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bad-ptr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound-3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound-3.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-bound.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-missing.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-missing.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-multiple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-multiple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-once.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exec-once.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/exit.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/halt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/halt.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/iloveos.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/iloveos.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/lib/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/lib/user/.dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/lib/user/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/multi-child-fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/multi-child-fd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/multi-recurse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/multi-recurse.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/no-vm/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/no-vm/Rubric" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/no-vm/multi-oom.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/no-vm/multi-oom.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-bad-ptr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-bad-ptr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-boundary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-boundary.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-empty.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-empty.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-missing.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-missing.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-normal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-normal.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-null.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-null.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-twice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/open-twice.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/practice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/practice.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-bad-fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-bad-fd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-bad-ptr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-bad-ptr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-boundary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-boundary.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-normal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-normal.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-stdout.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-stdout.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-zero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/read-zero.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-child.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-child.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-child.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-multichild.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-multichild.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-simple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/rox-simple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sample.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-bad-arg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-bad-arg.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-bad-sp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-bad-sp.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary-3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary-3.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/sc-boundary.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/stack-align-1.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/stack-align-2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/stack-align-3.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/stack-align-4.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/stack-align.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-bad-pid.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-bad-pid.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-killed.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-killed.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-simple.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-simple.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-twice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/wait-twice.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-bad-fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-bad-fd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-bad-ptr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-bad-ptr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-boundary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-boundary.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-normal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-normal.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-stdin.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-stdin.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-zero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/userprog/write-zero.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/Grading" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/Make.tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/Rubric.functionality" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/Rubric.robustness" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-inherit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-linear.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-mm-wrt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-qsort-mm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-qsort.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/child-sort.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-bad-fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-bad-fd.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-clean.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-clean.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-close.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-close.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-exit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-exit.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-inherit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-inherit.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-misalign.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-misalign.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-null.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-null.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-code.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-code.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-data.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-data.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-stk.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-over-stk.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-overlap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-overlap.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-read.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-remove.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-remove.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-shuffle.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-shuffle.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-twice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-twice.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-unmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-unmap.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-write.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-write.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-zero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/mmap-zero.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-linear.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-linear.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-mm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-mm.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-par.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-par.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-seq.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-seq.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-stk.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-merge-stk.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-parallel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-parallel.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-shuffle.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/page-shuffle.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/parallel-merge.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/parallel-merge.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/process_death.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-bad-addr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-bad-addr.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-bad-read.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-bad-read.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-big-stk-obj.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-big-stk-obj.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-bad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-bad.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-pusha.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-pusha.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-stack.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-stack.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-stk-sc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-grow-stk-sc.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-write-code-2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-write-code.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-write-code.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/pt-write-code2.ck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/qsort.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/qsort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/sample.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/tests/vm/sample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/Make.vars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/fixed-point.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/flags.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/init.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/init.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/interrupt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/interrupt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/intr-stubs.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/intr-stubs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/io.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/kernel.lds.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/loader.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/loader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/malloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/malloc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/palloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/palloc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/pte.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/start.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/switch.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/switch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/synch.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/synch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/thread.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/thread.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/threads/vaddr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/Make.vars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/exception.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/exception.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/gdt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/gdt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/pagedir.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/pagedir.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/process.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/process.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/syscall.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/syscall.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/tss.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/userprog/tss.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/Pintos.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/backtrace" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/pintos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/pintos-gdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/pintos-mkdisk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/pintos-set-cmdline" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/setitimer-helper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/squish-pty.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/utils/squish-unix.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/vm/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/vm/Make.vars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/src/vm/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/utils/bootable-cs162.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pintos/utils/simple-shell.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../report/project1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../report/project2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../report/project3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../schedlab/scheduling.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS170/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS170/chap7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS170/nphard-graph-algo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS170/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS61C/lab00/answers.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS61C/lab00/copy_git.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../school/CS61C/lab00/first_set.txt" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/proj2c.iml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BearMaps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BearMaps" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1597026896564" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a161d162-442c-4912-8994-35fe6da290f3" name="Default Changelist" comment="" />
+      <created>1597026765608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597026765608</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="806" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Style Checker" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913166" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bearmaps/graph/AStarGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bearmaps/graph/streetmap/GraphBuildingHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bearmaps/priorityqueue/DoubleMapPQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bearmaps/test/TestDirections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BearMaps.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
